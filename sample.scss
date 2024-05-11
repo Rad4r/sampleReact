@@ -1,0 +1,224 @@
+@import "../../app.scss";
+
+$paragraphColor: lightblue; //new color different form link (darkturquoise, aqua, lightblue)
+$subHeaderColor: gold; // new Color (deeppink, pink, lightcoral, plum, mediumpurple, gold)
+$cardHoverColor: #efefe0be;
+$cardClickedColor: #ffd900be;
+
+//indianred
+.portfolio{
+    
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+
+    p{
+        font-weight: bolder;
+        color:$paragraphColor;
+    }
+
+    .projectInfo{
+
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        display: flex;
+        min-height: 50vh;
+        max-height: 55vh;
+        overflow-y: auto;
+        border: .5em solid $link-color;
+        border-radius: 1em;
+        background-color: $blackColorTransparent;
+        flex-direction: column;
+        padding-bottom: 2em;
+
+        @include landscape{
+            height: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: unset;
+        }
+
+        .previewInfo{
+            padding: 1.5em;
+            margin: auto;
+            text-align: center;
+            width: 90%;
+            height: 25em;
+            // border: 2px solid wheat;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+
+            @include landscape{
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                flex: 1;
+            }
+
+            h1{
+                font-size: 2.2em;
+                color: cyan;
+            }
+            .skillsPreview{
+
+                display: flex;
+                justify-content: center;
+                gap: 1em;
+                flex-wrap: wrap;
+
+                h2{
+                    border: .2em solid $link-color;
+                    font-size: .8em;
+                    color: $subHeaderColor;
+                    padding: 5px 10px 5px 10px;
+
+                    @include landscape{
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+
+        .skillsShowcase{
+
+            margin: auto;
+            width: 90%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+
+            @include landscape{
+                justify-content: center;
+                // align-items: center;
+                flex-direction: row;
+                width: 90%;
+                padding-right: 1em;
+                position: relative;
+                top: 1em;
+                overflow-y: auto;
+                flex-wrap: wrap;
+                flex: 2;
+            }
+
+            .showcase{
+
+                border: .3em solid $normal-textcolor;             
+                background-color: $blackColorTransparent;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;   
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+
+                @include landscape{
+                    width: 25em;
+                }
+
+                h1{
+                    color: $subHeaderColor;
+                }
+                img{
+                    // height: 2em;
+                    width: 80%;
+                }
+            }
+        }
+        
+    }
+
+    .projectsCardCollection{
+        
+        width: 100%;
+        
+        padding: 0 1em 0 1em;
+        // margin: 0 auto 0 auto;
+        // justify-content: space-around;
+        display: flex;
+        gap: 1em;
+        overflow-x: auto;
+        height: 25vh;
+
+        @include landscape{
+            justify-content: center;
+        }
+
+        button{
+            padding: .4em;
+            border-radius: 1em;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: $cardHoverColor;
+        }
+
+        button:focus{
+            background-color: $cardClickedColor;
+        }
+        
+        .card{
+
+            height: 95%;
+            flex: 1;
+            padding: .8em;
+            min-width: 10em;
+            max-width: 16em;
+            border: .3em solid $link-color;
+            border-radius: 1em;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: $blackColorTransparent;
+
+            @include landscape{
+                border-width: .5em;
+            }
+
+            h1{
+                flex: 1;
+                // font-size: 1.1em;
+                color: $link-color;
+            }
+
+            h3{
+                flex: 1;
+                justify-self: flex-start;
+                color: $subHeaderColor;
+            }
+
+            p{
+                flex: 2;
+            }
+        }
+    }
+
+    p{
+        font-size: .8em;
+        @include landscape{
+            font-size: 1.2em;
+        }
+    }
+    h1{
+        font-size: 1.2em;
+        
+        @include landscape{
+            font-size: 1.7em;
+        }
+    }
+    h3{
+        font-size: 1em;
+        @include landscape{
+            font-size: 1.3em;
+        }
+    }
+}
